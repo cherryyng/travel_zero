@@ -1,0 +1,97 @@
+:root {
+    --main-bg-color: #738cac;
+    --main-colour: #fff;
+    --main-font: 'tenso', sans-serif;
+    background: rgb(115,140,172);
+    background: linear-gradient(0deg, rgba(115,140,172,1) 14%, rgba(82,114,157,1) 100%);
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    height: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main-spacing {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.2em;
+}
+
+#title {
+    color: var(--main-colour);
+    font-family: var(--main-font);
+    font-weight: 700;
+    font-style: normal;
+    font-size: 7rem;
+    text-shadow: 2px 2px 10px rgba(18, 74, 111, 0.55);
+}
+
+p {
+    color: var(--main-colour);
+    font-family: var(--main-font);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+a {
+    text-decoration: none;  
+}
+
+#title, p:hover {
+   cursor: pointer;
+   color: #EDF1F5;  
+   text-shadow: 2px 2px 10px rgba(18, 74, 111, 0.55);
+}
+
+#title, p:active {
+    cursor: pointer;  
+    color: aliceblue;
+ }
+
+.grow { 
+    transition: all .15s ease-in-out; 
+    }
+    
+.grow:hover { 
+    transform: scale(1.1); 
+}
+
+/* bouncing arrow*/
+.arrow
+{
+  position: relative;
+  bottom: -2rem;
+  left: 50%;
+  margin-left:-20px;
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
