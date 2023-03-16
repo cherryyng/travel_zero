@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
+    <title>TravelZero</title>
+
+    <link href="../static/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="icon" href="https://thumbs.dreamstime.com/b/tiny-icon-little-211423135.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.typekit.net/fwh6dzi.css">
+
+</head>
+
+<body>
+
+    <h2 id="title-text">Your Carbon Emissions</h2>
+    <!--the trigger-->
+    <button id="myBtn" class="button grow">Add a New Trip</button>
+    <!--the modal-->
+    <div id="add-trip-box" class="modal">
+
+        <div class="modal-content">
+            <h3> Add Your Trip:</h3>
+            <span class="close">&times;</span>
+            <form>
+                <label for="transportation" class="ques">How will you be travelling?</label><br>
+                <!--drop down menu-->
+                <select name="mode-names" id="mode-names">
+                    <option value="Walk">Walk</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Subway">Subway</option>
+                    <option value="Car">Car</option>
+                    <option value="Flight">Flight</option>
+                </select>
+                <br>
+                <br>
+
+                <label for="pointA" class="ques">Travelling from: </label><br>
+                <input types="text" id="pointA" name="pointA" class="textin" placeholder="Origin"><br><br>
+
+                <label for="pointB" class="ques">Travelling to: </label><br>
+                <input types="text" id="pointB" name="pointB" class="textin" placeholder="Destination"><br><br><br>
+
+                <input type="submit" id="submit" value="Submit"><br><br>
+            </form>
+        </div>
+    </div>
+
+
+    <!--the trigger-->
+    <button id="info-btn" class="button grow">?</button>
+    <!--the modal-->
+    <div id="info-box" class="modal2">
+        <span class="close2">&times;</span>
+        <div id="info-box_content">
+            <h1>Who are we?</h1>
+            <p>We are Flask! We are dedicated to do xyz. save the environment and the turtle</p>
+            <h1>What is TravelZero?</h1>
+            <p>This is a recommender for travel and stuff be environmentally friendly</p>
+            <h1>How does this work?</h1>
+            <ol>
+                <li>Enter the mode of travel (car, bus, train, walking!, etc.)</li>
+                <li>Enter the origin</li>
+                <li>Enter the destination</li>
+                <li>Repeat steps #1-3 for every different transportation in the trip</li>
+                <li>Press GO! We’ll tell you this and that</li>
+                <li>And that’s it! More transparency of how you’re affecting the earth, shit like that</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="display-padding">
+
+        <div class="display-trip">
+            <p>
+                <span class="from">From: Point A </span> <br>
+                <span class="to">To: Point B</span> <br> 
+                <span class="subtitle">Distance:</span> #####$$$$$$$$$$$$$$##### <br>
+                <span class="subtitle">Carbon Emissions:</span> #### <br>
+            </p> <br>
+        </div>
+
+        <!--
+        <div class="display-trip"">
+            <p>
+                <span class="from">From:</span> Point A
+                <span class="to">To:</span> Point B<br>
+                <span class="subtitle">Distance:</span> #### <br>
+                <span class="subtitle">Carbon Emissions:</span> #### <br>
+            </p>
+        </div>
+        <div class="display-trip"">
+            <p>
+                <span class="from">From:</span> Point A
+                <span class="to">To:</span> Point B<br>
+                <span class="subtitle">Distance:</span> #### <br>
+                <span class="subtitle">Carbon Emissions:</span> #### <br>
+            </p>
+        </div>
+        <br>
+        -->
+
+        <div id="summary-box">
+            <h1>Summary</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa alias facere illum optio provident quo
+                sunt nobis laudantium tenetur accusantium odio impedit, est omnis adipisci suscipit, minus iste!
+                Dolorum, quis!</p>
+        </div>
+    </div>
+
+
+    <script>
+        // TRIP-BOX
+        var modal = document.getElementById("add-trip-box");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        var submit = document.getElementById("submit");
+
+        // When the user clicks on div, open the popup
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        submit.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+        // INFO-BOX
+        var modal2 = document.getElementById("info-box");
+        var btn2 = document.getElementById("info-btn");
+        var span2 = document.getElementsByClassName("close2")[0];
+
+        // When the user clicks on div, open the popup
+
+        // When the user clicks the button, open the modal 
+        btn2.onclick = function () {
+            modal2.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
